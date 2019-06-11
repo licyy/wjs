@@ -1,0 +1,539 @@
+/* 定义变量 */
+@baceColor: #e92322;
+
+
+/* 设置样式 */
+
+/* 头部样式 */
+.wjs_header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+
+    .container {
+        height: 100%;
+
+        >div.row {
+            height: 100%;
+
+            .hd_er {
+                height: 100%;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translate(-50%, 49px);
+                    display: none;
+                    border: 1px solid#ccc;
+                    z-index: 999;
+
+                }
+
+                &:hover {
+                    img {
+                        border-top: none;
+                        display: block;
+
+                    }
+                }
+            }
+
+            .btn {
+                padding: 4px 16px;
+            }
+
+            .btn-link {
+                color: #000;
+
+                &:hover {
+                    color: @baceColor;
+                    text-decoration: none;
+                }
+            }
+
+        }
+    }
+}
+
+/* nav导航样式 */
+.wjs_nav {
+    &.navbar {
+        margin-bottom: 0;
+    }
+
+    .navbar-header {
+        .navbar-brand {
+            height: 80px;
+            line-height: 50px;
+
+            >.wjs_icon {
+                font-size: 40px;
+            }
+
+            >span:first-of-type {
+                color: @baceColor;
+            }
+
+            >span:last-of-type {
+                color: #000;
+            }
+        }
+    }
+
+    .navbar-nav {
+        >li {
+            >a {
+                font-size: 16px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                line-height: 60px;
+
+                &:hover,
+                &:focus {
+                    color: #777;
+                    border-bottom: 3px solid @baceColor;
+                }
+            }
+
+            &.active {
+
+                >a,
+                a:hover,
+                a:focus {
+                    border-bottom: 3px solid @baceColor;
+                }
+
+            }
+        }
+
+    }
+
+    .navbar-toggle {
+        margin-top: 25px;
+    }
+}
+
+/* 轮播图部分 */
+.wjs_banner {
+
+    /* 移动端的轮播图，图片大小随尺寸大小改变，用img.width=100%来设置 */
+    /* 移动端轮播图在sm md lg尺寸上应该是隐藏的 */
+    .mobileImg {
+        width: 100%;
+        display: block;
+
+        >img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    /* pc端的轮播图，浏览器宽度发生变化时，图片的宽度发生改变，高度不变，用background-imge来设置，背景图是一张很宽的图 */
+    /* 显示图片最中间background-position:center center */
+    /* 让图片高度固定background-size: cover; */
+    /* pc端轮播图在xs尺寸上应该是隐藏的 */
+    .pcImg {
+        display: block;
+        width: 100%;
+        height: 410px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* 信息栏 */
+.wjs_info {
+    width: 100%;
+
+    .wjs_icon_E900 {
+        font-size: 30px;
+    }
+
+    .row>.media {
+        margin-top: 20px;
+    }
+
+    margin-bottom: 20px;
+}
+
+/* 预约栏 */
+.wjs_reverse {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+
+    .container {
+        span {
+            font-size: 18px;
+        }
+
+        .reverse_lf {
+            p {
+                display: inline;
+            }
+
+            a:hover {
+                color: @baceColor;
+            }
+
+            a:last-of-type {
+                color: @baceColor;
+                border-bottom: 1px dotted @baceColor;
+            }
+        }
+    }
+}
+
+/* 产品详情页 */
+.wjs_product {
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+    overflow: hidden;
+    padding-bottom: 20px;
+
+    >.container {
+        padding-top: 20px;
+    }
+
+    .nav-tabs {
+
+        border-bottom: 1px solid #ddd;
+
+        >li {
+            margin: 0 20px;
+
+            >a {
+                line-height: 50px;
+                height: 70px;
+                border: none;
+                border-radius: none;
+
+                &:hover {
+                    border-bottom: 3px solid @baceColor;
+                }
+            }
+
+            &.active {
+
+                >a,
+                a:hover,
+                a:focus {
+                    color: #555;
+                    cursor: default;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 3px solid @baceColor;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+
+        .product_pBox {
+            position: relative;
+            background-color: #fff;
+            margin-top: 10px;
+
+
+
+            .pBox_left {
+                margin-right: 100px;
+                padding-top: 10px;
+                border-right: 1px dotted #ccc;
+
+                >p {
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                >.pBox_content {
+                    padding: 0 5px;
+
+                    .row {
+
+                        >div:nth-of-type(even) {
+                            text-align: right;
+                        }
+                    }
+
+                }
+
+            }
+
+            .pBox_right {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                right: 0px;
+                width: 100px;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    width: 16px;
+                    height: 16px;
+                    background-color: #eee;
+                    border-radius: 50%;
+                    left: -8px;
+
+                }
+
+                &::before {
+                    top: -8px;
+                }
+
+                &::after {
+                    bottom: -8px;
+                }
+
+                >p:first-of-type {
+                    position: absolute;
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: @baceColor;
+                    left: 30px;
+                    top: 45px;
+
+                }
+
+                >sub {
+                    position: absolute;
+                    height: 20px;
+                    font-size: 14px;
+                    color: @baceColor;
+                    left: 65px;
+                    top: 90px;
+
+                }
+
+                >p:last-of-type {
+                    position: absolute;
+                    left: 30px;
+                    top: 105px;
+                }
+
+                .b1,
+                .b2 {
+                    position: absolute;
+                    text-align: center;
+                    line-height: 25px;
+                    height: 25px;
+                    width: 20px;
+                    top: 30px;
+                    color: #fff;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .b1 {
+                    left: 30px;
+                    background-color: green;
+                }
+
+                .b2 {
+                    left: 55px;
+                    background-color: blue;
+
+                }
+            }
+
+            &.active {
+                background-color: @baceColor;
+                color: #fff;
+
+                .pBox_left {
+                    &::before {
+                        content: "\e915";
+                        position: absolute;
+                        font-family: "wjs";
+                        font-size: 25px;
+                        top: -5px;
+                        left: 0;
+                    }
+                }
+
+                .pBox_right {
+                    >p:first-of-type {
+                        color: #fff;
+                    }
+
+                    >sub {
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+/* 新闻部分 */
+.wjs_news {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+
+    .news_tittle {
+
+
+        >h3 {
+            position: relative;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+
+            &::before {
+                position: absolute;
+                content: " ";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid #ccc;
+                bottom: -5px;
+                right: -10px;
+            }
+        }
+
+
+    }
+
+    .news_tip {
+        position: relative;
+
+        .nav {
+            a {
+                padding: 10px;
+                line-height: 40px;
+                color: #fff;
+            }
+        }
+
+        .news_line {
+            position: absolute;
+            width: 1px;
+            height: 420px;
+            border-left: 2px dashed @baceColor;
+            left: 45px;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+
+            >li {
+                margin-bottom: 60px;
+
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                >a {
+                    background-color: #ccc;
+                    text-align: center;
+                    font-size: 40px;
+                    width: 60px;
+                    height: 60px;
+                    border: none;
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: @baceColor;
+                    }
+                }
+
+            }
+
+            >li.active>a,
+            >li.active>a:hover,
+            >li.active>a:focus {
+                color: #555;
+                cursor: default;
+                background-color: @baceColor;
+                border: none;
+            }
+
+            /* 经过媒体查询设置在xs和sm尺寸下的li的样式 */
+            @media screen and(min-width:768px) and (max-width:991px) {
+                >li {
+                    margin: 20px 30px;
+                }
+            }
+
+            @media screen and(max-width:768px) {
+                >li {
+                    margin: 20px 0px;
+                    width: 25%;
+                }
+            }
+        }
+    }
+
+
+
+
+    .news_content {
+        .wjs_newslist {
+            >li {
+                list-style: none;
+                line-height: 60px;
+
+                >a {
+                    &:hover {
+                        color: @baceColor;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/* 合作伙伴 */
+.wjs_partner {
+    background-color: #eee;
+
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+
+        >h3 {
+            width: 100%;
+            text-align: center;
+            line-height: 60px;
+            font-weight: bold;
+            letter-spacing: 10px;
+        }
+
+        >ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            li {
+                list-style: none;
+                font-size: 80px;
+                margin: 0 10px;
+            }
+        }
+    }
+
+
+
+
+
+}
